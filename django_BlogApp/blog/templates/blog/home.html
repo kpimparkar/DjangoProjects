@@ -1,0 +1,27 @@
+<!-- Using template inheritance -->
+<!-- Common code/base code will be taken from blog/base.html -->
+<!-- "block block-name" is used to replace the content of parent template in
+the child template -->
+<!-- block name is matched with the base.html -->
+{% extends 'blog/base.html' %}
+{% block content %}
+    <div class="article-content">
+    <h1><center>Welcome to the Django Blog App!</center></h1>
+    </div>
+
+    {% for post in posts %}
+        <div class="container">
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="#">{{ post.author }}</a>
+                  <small class="text-muted">{{ post.user_date_crated |date:"F d, Y" }}</small>
+                </div>
+                <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                <p class="article-content">{{ post.text }}</p>
+              </div>
+            </article>
+        </div>
+
+    {% endfor %}
+{% endblock content %}
