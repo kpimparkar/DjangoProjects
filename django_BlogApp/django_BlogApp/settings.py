@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# The third party package "crispy_forms" enhances the aesthetics of dhango forms
+# It was installed using "pip install django-crispy-forms"
+# crispy_form uses bootstrap 2 as default css framework which is old version
+# Following setting is added to use bootstrap 4 instead
+CRISY_TEMPLATE_PACK = 'bootstrap4'
