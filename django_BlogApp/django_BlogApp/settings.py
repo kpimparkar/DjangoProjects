@@ -122,8 +122,26 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Setting for a custom location for profile images. By default images are
+# stored in a folder created in the root directory of the app
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 # The third party package "crispy_forms" enhances the aesthetics of dhango forms
 # It was installed using "pip install django-crispy-forms"
 # crispy_form uses bootstrap 2 as default css framework which is old version
 # Following setting is added to use bootstrap 4 instead
 CRISY_TEMPLATE_PACK = 'bootstrap4'
+
+# Upon login, django tries to open the user profile page by default. To
+# change this behaviour and to open the homepage of the application,
+# use following setting. 'blog-home' is declared in blog/urls.py
+
+LOGIN_REDIRECT_URL = 'blog-home'
+
+# After using login_required decorator in users/views.py, added following
+# setting to redirect this flow to login page instead of the default /profile
+# page used by django
+
+LOGIN_URL = 'login'
