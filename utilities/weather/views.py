@@ -5,7 +5,7 @@ from weather.forms import CityForm
 
 # Create your views here.
 def index(request):
-    owm_api_key = 'ab5e9ab29c54381d021f70954a064126'
+    owm_api_key = 'owm_api_key'
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid='+owm_api_key
     error_msg = None
     message_class = None
